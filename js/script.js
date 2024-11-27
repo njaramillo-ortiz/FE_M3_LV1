@@ -357,12 +357,14 @@ function parse(target)
     console.log(`Stringify: ${JSON.stringify(target)}`);
 }
 
-function findDoctor(doctorName)
+function findDoctor(targetName)
 {
-    console.log(`Buscando: ${doctorName}`)
+    targetName = targetName.toLowerCase();
+    console.log(`Buscando: ${targetName}`)
     doctorArray.content.forEach(doctor => 
     {
-        if(doctor.name.includes(doctorName))
+        let doctorName = doctor.name.toLowerCase();
+        if(doctorName.includes(targetName))
         {
             console.log(`Encontrado: ${JSON.stringify(doctor)}`)
             return doctor;
